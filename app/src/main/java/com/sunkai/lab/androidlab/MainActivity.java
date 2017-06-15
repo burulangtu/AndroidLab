@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 
 public class MainActivity extends Activity {
@@ -17,5 +18,9 @@ public class MainActivity extends Activity {
 
     public void diyView(View view) {
         startActivity(new Intent(this, DIYViewActivity.class));
+    }
+
+    public void diyBanner(View view) {
+        startActivity(new Intent(this,DIYBannerActivity.class));
     }
 }
