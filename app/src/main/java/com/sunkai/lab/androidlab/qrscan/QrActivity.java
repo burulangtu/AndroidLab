@@ -78,10 +78,9 @@ public class QrActivity extends FragmentActivity {
      */
     public static void verifyLocationPermission(Context context) {
         int permission = ActivityCompat.checkSelfPermission(context,
-                Manifest.permission.ACCESS_FINE_LOCATION);
+                Manifest.permission.CAMERA);
         if (permission != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions((Activity) context, PERMISSIONS_CAMERA,
-                    REQUEST_CODE_CAMERA);
+            ActivityCompat.requestPermissions((Activity) context, PERMISSIONS_CAMERA, REQUEST_CODE_CAMERA);
         }
     }
 
