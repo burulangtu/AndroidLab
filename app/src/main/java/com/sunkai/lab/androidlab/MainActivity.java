@@ -3,6 +3,7 @@ package com.sunkai.lab.androidlab;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.google.zxing.client.android.decode.CaptureActivity;
@@ -47,6 +48,7 @@ public class MainActivity extends Activity {
                 if (bundle == null) {
                     return;
                 }
+                Log.e("SK", data.getStringExtra("result"));
             }
         }
     }

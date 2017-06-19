@@ -67,7 +67,6 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback 
         ambientLightManager = new AmbientLightManager(this);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
-        requestPermission(this);
     }
 
     void requestPermission(Context context) {
@@ -97,7 +96,6 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback 
     @Override
     protected void onResume() {
         super.onResume();
-
 
         // CameraManager must be initialized here, not in onCreate(). This is necessary because we don't
         // want to open the camera driver and measure the screen size if we're going to show the help on
@@ -164,6 +162,7 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback 
             return;
         }
         try {
+            requestPermission(this);
             cameraManager.openDriver(surfaceHolder);
             // Creating the handler starts the preview, which can also throw a RuntimeException.
             if (handler == null) {
@@ -221,6 +220,5 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback 
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
     }
 }
