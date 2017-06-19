@@ -9,6 +9,7 @@ import android.view.View;
 import com.google.zxing.client.android.decode.CaptureActivity;
 import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
+import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 
 public class MainActivity extends Activity {
 
@@ -34,6 +35,10 @@ public class MainActivity extends Activity {
     public void qrScan(View view) {
         Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
         startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    public void textWithImage(View view) {
+        startActivity(new Intent(this, MixTextImageActivity.class));
     }
 
     @Override

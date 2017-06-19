@@ -26,9 +26,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity><!---->
+        </activity> <!--  -->
         <activity android:name=".diyview.DIYViewActivity" />
         <activity android:name=".diybanner.DIYBannerActivity" />
+        <activity android:name=".mixtypeset.MixTextImageActivity"></activity>
     </application>
 
 </manifest>
