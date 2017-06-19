@@ -1,11 +1,16 @@
 package com.google.zxing.client.android.decode;
 
+import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -21,6 +26,11 @@ import java.io.IOException;
 import java.util.Collection;
 
 public class CaptureActivity extends Activity implements SurfaceHolder.Callback {
+
+
+    private static final int REQUEST_CODE_CAMERA = 2;
+    private static String[] PERMISSIONS_CAMERA = {
+            Manifest.permission.CAMERA};
 
     private static final String TAG = CaptureActivity.class.getSimpleName();
 
@@ -57,6 +67,31 @@ public class CaptureActivity extends Activity implements SurfaceHolder.Callback 
         ambientLightManager = new AmbientLightManager(this);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        requestPermission(this);
+    }
+
+    void requestPermission(Context context) {
+        if (targetVersion(context) >= 23 && Build.VERSION.SDK_INT >= 23) {
+            verifyLocationPermission(context);
+        }
+    }
+
+    /**
+     * 判断定位权限并且申请定位权限
+     *
+     * @param context
+     */
+    public static void verifyLocationPermission(Context context) {
+        int permission = ActivityCompat.checkSelfPermission(context,
+                Manifest.permission.CAMERA);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions((Activity) context, PERMISSIONS_CAMERA, REQUEST_CODE_CAMERA);
+        }
+    }
+
+    public static int targetVersion(Context context) {
+        int targetSdkVersion = context.getApplicationContext().getApplicationInfo().targetSdkVersion;
+        return targetSdkVersion;
     }
 
     @Override
