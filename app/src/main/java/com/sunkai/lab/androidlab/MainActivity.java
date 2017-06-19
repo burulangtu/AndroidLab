@@ -4,12 +4,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.google.zxing.client.android.decode.CaptureActivity;
 import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
-import com.sunkai.lab.androidlab.qrscan.QrActivity;
-import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 public class MainActivity extends Activity {
 
@@ -33,7 +31,7 @@ public class MainActivity extends Activity {
     }
 
     public void qrScan(View view) {
-        Intent intent = new Intent(MainActivity.this, QrActivity.class);
+        Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
@@ -48,12 +46,6 @@ public class MainActivity extends Activity {
                 Bundle bundle = data.getExtras();
                 if (bundle == null) {
                     return;
-                }
-                if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_SUCCESS) {
-                    String result = bundle.getString(CodeUtils.RESULT_STRING);
-                    Toast.makeText(this, "解析结果:" + result, Toast.LENGTH_LONG).show();
-                } else if (bundle.getInt(CodeUtils.RESULT_TYPE) == CodeUtils.RESULT_FAILED) {
-                    Toast.makeText(MainActivity.this, "解析二维码失败", Toast.LENGTH_LONG).show();
                 }
             }
         }

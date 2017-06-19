@@ -29,7 +29,6 @@
         </activity><!---->
         <activity android:name=".diyview.DIYViewActivity" />
         <activity android:name=".diybanner.DIYBannerActivity" />
-        <activity android:name=".qrscan.QrActivity" />
     </application>
 
 </manifest>
