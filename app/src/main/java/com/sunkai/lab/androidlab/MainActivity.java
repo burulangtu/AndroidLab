@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.google.zxing.client.android.decode.CaptureActivity;
 import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
+import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 
@@ -39,6 +40,10 @@ public class MainActivity extends Activity {
 
     public void textWithImage(View view) {
         startActivity(new Intent(this, MixTextImageActivity.class));
+    }
+
+    public void diyLoading(View view) {
+        startActivity(new Intent(this, DiyLoadingActivity.class));
     }
 
     @Override

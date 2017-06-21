@@ -29,7 +29,8 @@
         </activity> <!--  -->
         <activity android:name=".diyview.DIYViewActivity" />
         <activity android:name=".diybanner.DIYBannerActivity" />
-        <activity android:name=".mixtypeset.MixTextImageActivity"></activity>
+        <activity android:name=".mixtypeset.MixTextImageActivity" />
+        <activity android:name=".diyloading.DiyLoadingActivity"></activity>
     </application>
 
 </manifest>
