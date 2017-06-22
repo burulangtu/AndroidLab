@@ -12,6 +12,7 @@ import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
+import com.sunkai.lab.androidlab.diyscroller.DIYSliderActivity;
 
 public class MainActivity extends Activity {
 
@@ -49,6 +50,10 @@ public class MainActivity extends Activity {
 
     public void pathEffect(View view) {
         startActivity(new Intent(this, PathEffectActivity.class));
+    }
+
+    public void diyslider(View view) {
+        startActivity(new Intent(this, DIYSliderActivity.class));
     }
 
     @Override

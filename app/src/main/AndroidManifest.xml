@@ -31,7 +31,15 @@
         <activity android:name=".diybanner.DIYBannerActivity" />
         <activity android:name=".mixtypeset.MixTextImageActivity" />
         <activity android:name=".diyloading.DiyLoadingActivity" />
-        <activity android:name=".patheffect.PathEffectActivity"></activity>
+        <activity android:name=".patheffect.PathEffectActivity" />
+        <activity
+            android:name=".diyscroller.DIYSliderActivity"
+            android:theme="@style/Theme.TranslucentActionBar.Overlay">
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

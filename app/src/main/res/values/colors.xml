@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="scan_corner_color">#2562de</color>
+    <color name="accent">#ff009fd6</color>
+    <color name="accent2">#ff509b35</color>
+
+    <color name="az">#ff509b35</color>
+    <color name="ca">#ff009fd6</color>
+    <color name="ut">#ffbd3434</color>
 </resources>
