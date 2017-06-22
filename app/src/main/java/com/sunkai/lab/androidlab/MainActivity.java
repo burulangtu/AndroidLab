@@ -11,6 +11,7 @@ import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
+import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
 
 public class MainActivity extends Activity {
 
@@ -44,6 +45,10 @@ public class MainActivity extends Activity {
 
     public void diyLoading(View view) {
         startActivity(new Intent(this, DiyLoadingActivity.class));
+    }
+
+    public void pathEffect(View view) {
+        startActivity(new Intent(this, PathEffectActivity.class));
     }
 
     @Override

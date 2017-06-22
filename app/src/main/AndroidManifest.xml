@@ -30,7 +30,8 @@
         <activity android:name=".diyview.DIYViewActivity" />
         <activity android:name=".diybanner.DIYBannerActivity" />
         <activity android:name=".mixtypeset.MixTextImageActivity" />
-        <activity android:name=".diyloading.DiyLoadingActivity"></activity>
+        <activity android:name=".diyloading.DiyLoadingActivity" />
+        <activity android:name=".patheffect.PathEffectActivity"></activity>
     </application>
 
 </manifest>
