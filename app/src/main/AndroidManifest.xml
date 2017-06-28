@@ -26,7 +26,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!--  -->
+        </activity>
         <activity android:name=".diyview.DIYViewActivity" />
         <activity android:name=".diybanner.DIYBannerActivity" />
         <activity android:name=".mixtypeset.MixTextImageActivity" />
@@ -35,11 +35,13 @@
         <activity
             android:name=".diyscroller.DIYSliderActivity"
             android:theme="@style/Theme.TranslucentActionBar.Overlay">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
+        <activity android:name=".timeline.TimeLineActivity"></activity>
     </application>
 
 </manifest>

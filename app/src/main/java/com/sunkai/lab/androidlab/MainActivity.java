@@ -9,10 +9,11 @@ import android.view.View;
 import com.google.zxing.client.android.decode.CaptureActivity;
 import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
+import com.sunkai.lab.androidlab.diyscroller.DIYSliderActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
-import com.sunkai.lab.androidlab.diyscroller.DIYSliderActivity;
+import com.sunkai.lab.androidlab.timeline.TimeLineActivity;
 
 public class MainActivity extends Activity {
 
@@ -54,6 +55,10 @@ public class MainActivity extends Activity {
 
     public void diyslider(View view) {
         startActivity(new Intent(this, DIYSliderActivity.class));
+    }
+
+    public void timeLine(View view) {
+        startActivity(new Intent(this, TimeLineActivity.class));
     }
 
     @Override
