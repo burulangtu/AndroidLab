@@ -37,6 +37,7 @@
             android:theme="@style/Theme.TranslucentActionBar.Overlay" />
         <activity android:name=".timeline.TimeLineActivity" />
         <activity android:name=".miclock.MiClockActivity" />
+        <activity android:name=".sensor.SensorActivity"></activity>
     </application>
 
 </manifest>
