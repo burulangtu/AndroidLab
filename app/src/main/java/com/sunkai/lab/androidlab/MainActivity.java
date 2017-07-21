@@ -13,6 +13,7 @@ import com.sunkai.lab.androidlab.diybanner.DIYBannerActivity;
 import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
 import com.sunkai.lab.androidlab.diyscroller.DIYSliderActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
+import com.sunkai.lab.androidlab.fish.FishActivity;
 import com.sunkai.lab.androidlab.miclock.MiClockActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
@@ -47,6 +48,7 @@ public class MainActivity extends Activity {
         labItemTitles.add("recycleView时间轴组件");
         labItemTitles.add("仿小米时钟");
         labItemTitles.add("加速传感器");
+        labItemTitles.add("自定义View,小金鱼");
     }
 
     @Override
@@ -101,6 +103,8 @@ public class MainActivity extends Activity {
             case 9:
                 intent = new Intent(this, SensorActivity.class);
                 break;
+            case 10:
+                intent = new Intent(this, FishActivity.class);
         }
 
         if (intent != null) {
