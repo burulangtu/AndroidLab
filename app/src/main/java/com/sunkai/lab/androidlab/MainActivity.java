@@ -3,6 +3,8 @@ package com.sunkai.lab.androidlab;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
@@ -17,6 +19,9 @@ import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
 import com.sunkai.lab.androidlab.sensor.SensorActivity;
 import com.sunkai.lab.androidlab.timeline.TimeLineActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends Activity {
 
     /**
@@ -24,51 +29,84 @@ public class MainActivity extends Activity {
      */
     public static final int REQUEST_CODE = 111;
 
+    RecyclerView labList;
+
+    LabListAdapter labListAdapter;
+
+
+    List<String> labItemTitles = new ArrayList<>();
+
+    {
+        labItemTitles.add("自定义View，水位动画");
+        labItemTitles.add("自定义View, loading动画");
+        labItemTitles.add("自定义View, 轮播banner");
+        labItemTitles.add("二维码扫描");
+        labItemTitles.add("图文混排");
+        labItemTitles.add("PathEffect demo");
+        labItemTitles.add("自定义滑动组件");
+        labItemTitles.add("recycleView时间轴组件");
+        labItemTitles.add("仿小米时钟");
+        labItemTitles.add("加速传感器");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        labList = (RecyclerView) findViewById(R.id.lab_list);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        labList.setLayoutManager(linearLayoutManager);
+        labList.setHasFixedSize(true);
+        labListAdapter = new LabListAdapter(labItemTitles);
+        labList.setAdapter(labListAdapter);
+        labListAdapter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                handleClick((Integer) view.getTag());
+            }
+        });
     }
 
-    public void diyView(View view) {
-        startActivity(new Intent(this, DIYViewActivity.class));
-    }
+    private void handleClick(int position) {
+        Intent intent = null;
+        switch (position) {
+            case 0:
+                intent = new Intent(this, DIYViewActivity.class);
+                break;
+            case 1:
+                intent = new Intent(this, DiyLoadingActivity.class);
+                break;
+            case 2:
+                intent = new Intent(this, DIYBannerActivity.class);
+                break;
+            case 3:
+                intent = new Intent(MainActivity.this, CaptureActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
+                return;
+            case 4:
+                intent = new Intent(this, MixTextImageActivity.class);
+                break;
+            case 5:
+                intent = new Intent(this, PathEffectActivity.class);
+                break;
+            case 6:
+                intent = new Intent(this, DIYSliderActivity.class);
+                break;
+            case 7:
+                intent = new Intent(this, TimeLineActivity.class);
+                break;
+            case 8:
+                intent = new Intent(this, MiClockActivity.class);
+                break;
+            case 9:
+                intent = new Intent(this, SensorActivity.class);
+                break;
+        }
 
-    public void diyBanner(View view) {
-        startActivity(new Intent(this, DIYBannerActivity.class));
-    }
+        if (intent != null) {
+            startActivity(intent);
+        }
 
-    public void qrScan(View view) {
-        Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
-        startActivityForResult(intent, REQUEST_CODE);
-    }
-
-    public void textWithImage(View view) {
-        startActivity(new Intent(this, MixTextImageActivity.class));
-    }
-
-    public void diyLoading(View view) {
-        startActivity(new Intent(this, DiyLoadingActivity.class));
-    }
-
-    public void pathEffect(View view) {
-        startActivity(new Intent(this, PathEffectActivity.class));
-    }
-
-    public void diyslider(View view) {
-        startActivity(new Intent(this, DIYSliderActivity.class));
-    }
-
-    public void timeLine(View view) {
-        startActivity(new Intent(this, TimeLineActivity.class));
-    }
-
-    public void diyMiClock(View view) {
-        startActivity(new Intent(this, MiClockActivity.class));
-    }
-
-    public void sensorDemo(View view) {
-        startActivity(new Intent(this, SensorActivity.class));
     }
 
     @Override
