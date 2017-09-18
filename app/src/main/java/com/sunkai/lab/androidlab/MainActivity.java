@@ -17,6 +17,7 @@ import com.sunkai.lab.androidlab.fish.FishActivity;
 import com.sunkai.lab.androidlab.miclock.MiClockActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
 import com.sunkai.lab.androidlab.patheffect.PathEffectActivity;
+import com.sunkai.lab.androidlab.dragball.DragBallActivity;
 import com.sunkai.lab.androidlab.sensor.SensorActivity;
 import com.sunkai.lab.androidlab.timeline.TimeLineActivity;
 
@@ -49,6 +50,7 @@ public class MainActivity extends Activity {
         labItemTitles.add("仿小米时钟");
         labItemTitles.add("加速传感器");
         labItemTitles.add("自定义View,小金鱼");
+        labItemTitles.add("自定义View,未读消息拖拽粘性效果");
     }
 
     @Override
@@ -105,6 +107,8 @@ public class MainActivity extends Activity {
                 break;
             case 10:
                 intent = new Intent(this, FishActivity.class);
+            case 11:
+                intent = new Intent(this, DragBallActivity.class);
         }
 
         if (intent != null) {

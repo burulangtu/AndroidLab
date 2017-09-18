@@ -38,7 +38,8 @@
         <activity android:name=".timeline.TimeLineActivity" />
         <activity android:name=".miclock.MiClockActivity" />
         <activity android:name=".sensor.SensorActivity" />
-        <activity android:name=".fish.FishActivity"></activity>
+        <activity android:name=".fish.FishActivity" />
+        <activity android:name=".dragball.DragBallActivity"></activity>
     </application>
 
 </manifest>
