@@ -39,7 +39,8 @@
         <activity android:name=".miclock.MiClockActivity" />
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".fish.FishActivity" />
-        <activity android:name=".dragball.DragBallActivity"></activity>
+        <activity android:name=".dragball.DragBallActivity" />
+        <activity android:name=".pullrefreshView.PullRefreshViewActivity"></activity>
     </application>
 
 </manifest>

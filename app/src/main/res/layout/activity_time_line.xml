@@ -7,7 +7,7 @@
     tools:context="com.sunkai.lab.androidlab.timeline.TimeLineActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/pull_refresh_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10dp" />

@@ -57,7 +57,7 @@ public class TimeLineActivity extends Activity {
     }
 
     private void initView() {
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.pull_refresh_view);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(timeLineAdapter);
         recyclerView.addItemDecoration(dotItemDecoration);
