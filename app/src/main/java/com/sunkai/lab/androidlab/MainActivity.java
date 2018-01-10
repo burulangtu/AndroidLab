@@ -14,6 +14,7 @@ import com.sunkai.lab.androidlab.diyloading.DiyLoadingActivity;
 import com.sunkai.lab.androidlab.diyscroller.DIYSliderActivity;
 import com.sunkai.lab.androidlab.diyview.DIYViewActivity;
 import com.sunkai.lab.androidlab.dragball.DragBallActivity;
+import com.sunkai.lab.androidlab.dragview.DragViewActivity;
 import com.sunkai.lab.androidlab.fish.FishActivity;
 import com.sunkai.lab.androidlab.miclock.MiClockActivity;
 import com.sunkai.lab.androidlab.mixtypeset.MixTextImageActivity;
@@ -53,6 +54,7 @@ public class MainActivity extends Activity {
         labItemTitles.add("自定义View,小金鱼");
         labItemTitles.add("自定义View,未读消息拖拽粘性效果");
         labItemTitles.add("自定义下拉上拉");
+        labItemTitles.add("拖拽效果");
     }
 
     @Override
@@ -115,6 +117,9 @@ public class MainActivity extends Activity {
                 break;
             case 12:
                 intent = new Intent(this, PullRefreshViewActivity.class);
+                break;
+            case 13:
+                intent = new Intent(this, DragViewActivity.class);
                 break;
         }
 

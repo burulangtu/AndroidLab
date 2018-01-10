@@ -40,7 +40,10 @@
         <activity android:name=".sensor.SensorActivity" />
         <activity android:name=".fish.FishActivity" />
         <activity android:name=".dragball.DragBallActivity" />
-        <activity android:name=".pullrefreshView.PullRefreshViewActivity"></activity>
+        <activity android:name=".pullrefreshView.PullRefreshViewActivity" />
+        <activity
+            android:name=".dragview.DragViewActivity"
+            android:theme="@style/Base.Theme.AppCompat"></activity>
     </application>
 
 </manifest>
